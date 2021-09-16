@@ -5,21 +5,20 @@ using UnityEngine;
 public class ForestSpawner : MonoBehaviour
 {
     private GameObject[] treesArray;
-    private GameObject[] deadTreesArray;
+
 
     public int treesAmount { get; set; } // ENCAPSULATION
 
     void Start()
     {
         treesArray = GameObject.FindGameObjectsWithTag("Tree");
-        deadTreesArray = GameObject.FindGameObjectsWithTag("DeadTree");
 
         SpawnForest(); // ABSTRACTION
     }
 
     void Update()
     {
-        
+
     }
 
     void SpawnForest()

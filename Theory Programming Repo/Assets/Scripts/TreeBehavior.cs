@@ -15,7 +15,7 @@ public class TreeBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -24,11 +24,10 @@ public class TreeBehavior : MonoBehaviour
         {
             EnemyBehavior enemyScript = other.gameObject.GetComponent<EnemyBehavior>();
             ReplaceWithDeadTree();
-           enemyScript.PickAtree();
+            enemyScript.PickAtree();
             enemyScript.GoToChosenTree();
-
         }
-            
+
     }
 
     void ReplaceWithDeadTree()

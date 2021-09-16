@@ -7,8 +7,10 @@ public class EnemiesSpawner : MonoBehaviour
     private GameObject[] spawnersLocationsArray;
     private GameObject[] m_enemiesArray;
 
-    public int enemiesPerSpawn = 10;
-    public int totalEnemies;
+    public int enemiesPerSpawn = 1;
+    public int totalEnemies = 0;
+
+    public UI_Display ui_DisplayScript;
     void Start()
     {
         spawnersLocationsArray = GameObject.FindGameObjectsWithTag("Spawner");
@@ -20,7 +22,7 @@ public class EnemiesSpawner : MonoBehaviour
     {
     }
 
-    void SpawnEnemies()
+    public void SpawnEnemies()
     {
         foreach (var spawner in spawnersLocationsArray)
         {
