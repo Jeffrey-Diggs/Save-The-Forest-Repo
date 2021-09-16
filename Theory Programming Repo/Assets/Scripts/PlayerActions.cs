@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerActions : MonoBehaviour
 {
     private EnemiesSpawner m_EnemiesSpawnerScript;
+    public GameObject fxExplosion;
     void Start()
     {
         m_EnemiesSpawnerScript = GameObject.Find("Enemies Spawner").GetComponent<EnemiesSpawner>();
@@ -22,6 +23,7 @@ public class PlayerActions : MonoBehaviour
             {
                 if (hit.transform.CompareTag("Enemy"))
                 {
+                    Instantiate(fxExplosion, hit.transform.position,Quaternion.identity);
                     Destroy(hit.transform.gameObject);
                     m_EnemiesSpawnerScript.totalEnemies--;
                 }
