@@ -3,21 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyBehavior : Enemy // INHERITANCE
+public class TractorBehavior : Enemy // INHERITANCE
 {
     private NavMeshAgent m_navMeshAgent;
 
-    void Start()
+    void OnEnable()
     {
         m_navMeshAgent = GetComponent<NavMeshAgent>();
-        m_navMeshAgent.speed = SetSpeed();
+        
         PickAtree(); // ABSTRACTION
         GoToChosenTree(); // ABSTRACTION
     }
 
     public override float SetSpeed() // POLYMORPHISM
     {
-        return 6.0f;
+        return 6f;
     }
 
     public GameObject PickAtree()
@@ -31,8 +31,8 @@ public class EnemyBehavior : Enemy // INHERITANCE
     {
         if (gameObject.transform.parent.name != "Prefab")
         {
-            //m_navMeshAgent.speed = SetSpeed();
             m_navMeshAgent.SetDestination(PickAtree().transform.position);
+            m_navMeshAgent.speed = SetSpeed();
         }
             
     }

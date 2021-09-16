@@ -23,11 +23,11 @@ public class TreeBehavior : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             EnemyBehavior enemyScript = other.gameObject.GetComponent<EnemyBehavior>();
+
             ReplaceWithDeadTree();
             enemyScript.PickAtree();
             enemyScript.GoToChosenTree();
         }
-
     }
 
     void ReplaceWithDeadTree()
