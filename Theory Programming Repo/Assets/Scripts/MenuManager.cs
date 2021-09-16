@@ -7,6 +7,11 @@ public class MenuManager : MonoBehaviour
 {
     public GameObject howToPlay;
 
+    private void Start()
+    {
+        if (howToPlay == null)
+            return;
+    }
     public void LoadMainScene()
     {
         SceneManager.LoadScene(1);

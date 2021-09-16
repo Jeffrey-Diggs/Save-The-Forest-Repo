@@ -18,6 +18,8 @@ public class UI_Display : MonoBehaviour
     private ForestSpawner forestSpawnerScript;
     private EnemiesSpawner enemiesSpawnerScript;
 
+    public GameObject gameOverScreen;
+
     public int waveCount = 1;
     void Start()
     {
@@ -36,5 +38,11 @@ public class UI_Display : MonoBehaviour
 
         enemiesCounter.GetComponent<TextMeshProUGUI>().text = "Enemies : " + enemiesSpawnerScript.totalEnemies.ToString();
         enemiesCounterShadow.GetComponent<TextMeshProUGUI>().text = enemiesCounter.GetComponent<TextMeshProUGUI>().text;
+
+        if(forestSpawnerScript.treesAmount == 0)
+        {
+            Time.timeScale = 0;
+            gameOverScreen.SetActive(true);
+        }
     }
 }

@@ -7,7 +7,7 @@ public class ForestSpawner : MonoBehaviour
     private GameObject[] treesArray;
     private GameObject[] deadTreesArray;
 
-    public int treesAmount { get; private set; } // ENCAPSULATION
+    public int treesAmount { get; set; } // ENCAPSULATION
 
     void Start()
     {
