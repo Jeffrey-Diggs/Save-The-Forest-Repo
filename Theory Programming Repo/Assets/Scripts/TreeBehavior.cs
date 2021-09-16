@@ -21,7 +21,14 @@ public class TreeBehavior : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Enemy"))
+        {
+            EnemyBehavior enemyScript = other.gameObject.GetComponent<EnemyBehavior>();
             ReplaceWithDeadTree();
+           enemyScript.PickAtree();
+            enemyScript.GoToChosenTree();
+
+        }
+            
     }
 
     void ReplaceWithDeadTree()

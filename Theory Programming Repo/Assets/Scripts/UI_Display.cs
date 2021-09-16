@@ -39,7 +39,7 @@ public class UI_Display : MonoBehaviour
         enemiesCounter.GetComponent<TextMeshProUGUI>().text = "Enemies : " + enemiesSpawnerScript.totalEnemies.ToString();
         enemiesCounterShadow.GetComponent<TextMeshProUGUI>().text = enemiesCounter.GetComponent<TextMeshProUGUI>().text;
 
-        if(forestSpawnerScript.treesAmount == 0)
+        if(forestSpawnerScript.treesAmount <= 0)
         {
             Time.timeScale = 0;
             gameOverScreen.SetActive(true);

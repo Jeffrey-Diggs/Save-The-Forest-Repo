@@ -18,7 +18,7 @@ public class PlayerActions : MonoBehaviour
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out hit, 50.0f))
+            if (Physics.Raycast(ray, out hit, 400.0f))
             {
                 if (hit.transform.CompareTag("Enemy"))
                 {

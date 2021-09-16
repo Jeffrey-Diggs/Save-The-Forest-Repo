@@ -15,14 +15,14 @@ public class EnemyBehavior : Enemy
         GoToChosenTree(); // ABSTRACTION
     }
 
-    GameObject PickAtree()
+    public GameObject PickAtree()
     {
         GameObject[] activeTrees = GameObject.FindGameObjectsWithTag("Tree");
         int randomTree = Random.Range(0, activeTrees.Length);
         return activeTrees[randomTree];
     }
 
-    void GoToChosenTree()
+    public void GoToChosenTree()
     {
         if (gameObject.transform.parent.name != "Prefab")
             m_navMeshAgent.SetDestination(PickAtree().transform.position);
